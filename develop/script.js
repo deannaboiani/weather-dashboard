@@ -11,9 +11,27 @@
 // THEN I am again presented with current and future conditions for that city
 console.log('hi')
 
-$('#locationBtn').click(function () {
-    document.location.href = "http://www.7timer.info/bin/astro.php?lon=113.17&lat=23.09&ac=0&lang=en&unit=metric&output=internal&tzshift=0"
-  })
+$('#locationBtn').click(getApi);
+  // var requestUrl = "https://api.openweathermap.org/data/2.5/weather?q=seattle&appid=06d6972d9ab98e2a5159408e1850243a"
+  
+  function getApi() {
+    fetch("https://api.openweathermap.org/data/2.5/weather?q=seattle&appid=06d6972d9ab98e2a5159408e1850243a")
+    .then(function (response) {
+      if (response.ok) {
+        console.log(response);
+        response.json().then(function (data) {
+        console.log(data)
+        });
+      } else {
+        alert('Error: ' + response.statusText);
+      }
+    })
+  }
+
+
+  
+  // getApi(requestUrl);
   
 
-
+var apiKey = "06d6972d9ab98e2a5159408e1850243a"
+"https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&exclude={part}&appid={API key}"

@@ -19,27 +19,105 @@ SO THAT I can plan a trip accordingly -->
   </head>
   <body>
     <header>
-      <div class="jumbotron jumbotron-fluid">
-        <div class="container">
-          <h1 class="display-4">How's the weather out there?</h1>
-          <p class="lead">
-            This application helps you find the weather in certain areas.
+      <h1 class="display-4 bg-primary text-center text-white">
+        Weather Dashboard
+      </h1>
+    </header>
+    <main class="flex-row justify-space-between">
+      <div class="d-flex align-items-start flex-column">
+        <div class="card">
+          <h3 class="card-header text-uppercase">Search Location</h3>
+          <form id="user-form" class="card-body">
+            <label class="form-label" for="location">City: </label>
+            <input
+              name="location"
+              id="location"
+              type="text"
+              autofocus="true"
+              class="form-input"
+            />
+            <button type="button" class="btn btn-info" id="locationBtn">
+              Find Weather
+            </button>
+          </form>
+        </div>
+
+        <div class="d-inline-flex p-2 bd-highlight align-self-start">
+          <div class="btn-group-vertical">
+            <button id="recent-search-1" class="bg-secondary text-white">
+              Recent City
+            </button>
+            <button id="recent-search-2" class="bg-secondary text-white">
+              Recent City
+            </button>
+            <button id="recent-search-3" class="bg-secondary text-white">
+              Recent City
+            </button>
+            <button id="recent-search-4" class="bg-secondary text-white">
+              Recent City
+            </button>
+            <button id="recent-search-5" class="bg-secondary text-white">
+              Recent City
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="current-city-info border border-dark col align-self-end">
+          <h3>
+            <span id="current-city-name"></span><span id="current-date"></span>
+          </h3>
+          <p>Temp: <span id="current-city-temp"></span></p>
+          <p>Wind: <span id="current-city-wind"></span></p>
+          <p>Humidity: <span id="current-city-humidity"></span></p>
+          <p>
+            UV Index:
+            <span class="badge badge-success"
+              ><span id="current-city-uv"></span
+            ></span>
           </p>
         </div>
       </div>
-    </header>
-    <main class="flex-row justify-space-between">
-        <div class="col-12 col-md-4">
 
-            <div class="card">
-              <h3 class="card-header text-uppercase">Search Location</h3>
-              <form id="user-form" class="card-body">
-                <label class="form-label" for="location">City: </label>
-                <input name="location" id="location" type="text" autofocus="true" class="form-input" />
-                <button type="button" class="btn btn-info" id="locationBtn">Find Weather</button>
-              </form>
-            </div>        
-       
+      <div class="container flex-col">
+        <div class="card row" style="width: 18rem">
+          <div class="card-body recent-2-info">
+            <h5 class="card-title">Card title</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+            <p>Temp: <span id="recent-2-temp"></span></p>
+            <p>Wind: <span id="recent-2-wind"></span></p>
+            <p>Humidity: <span id="recent-2-humidity"></span></p>
+          </div>
+        </div>
+        <div class="card row" style="width: 18rem">
+          <div class="card-body recent-3-info">
+            <h5 class="card-title">Card title</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+            <p>Temp: <span id="recent-3-temp"></span></p>
+            <p>Wind: <span id="recent-3-wind"></span></p>
+            <p>Humidity: <span id="recent-3-humidity"></span></p>
+          </div>
+        </div>
+        <div class="card row" style="width: 18rem">
+          <div class="card-body recent-4-info">
+            <h5 class="card-title">Card title</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+            <p>Temp: <span id="recent-4-temp"></span></p>
+            <p>Wind: <span id="recent-4-wind"></span></p>
+            <p>Humidity: <span id="recent-4-humidity"></span></p>
+          </div>
+        </div>
+        <div class="card row" style="width: 18rem">
+          <div class="card-body recent-5-info">
+            <h5 class="card-title">Card title</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+            <p>Temp: <span id="recent-5-temp"></span></p>
+            <p>Wind: <span id="recent-5-wind"></span></p>
+            <p>Humidity: <span id="recent-5-humidity"></span></p>
+          </div>
+        </div>
+      </div>
     </main>
 
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
